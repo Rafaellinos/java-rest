@@ -1,6 +1,7 @@
 package app.car.cap02.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.util.Date;
 
@@ -8,6 +9,7 @@ import java.util.Date;
 public class Driver {
 
     @Id
+    @GeneratedValue
     Long id;
     String name;
     Date BirthDate;
