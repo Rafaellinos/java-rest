@@ -27,4 +27,6 @@
 * POSTMAN
     - Headers
         * Accepet: */* -> Aceita qualquer coisa, json, html etc, wildcard para mime type
-        * mime types: application -> binário -> <tipo><subtipo>
+        * mime types: application -> binário -> <tipo>/<subtipo>
+* Idempotência
+    - Propriedade http que define que o verbo sempre tera a mesma saída, nao importa quantas vezes for chamado
