@@ -43,8 +43,8 @@ public class DriverAPI {
         return driverRepository.save(driver);
     }
     
-    @PutMapping("/drivers/{id]")
-    public Driver fullUpdateDroover(@PathVariable("id") Long id, @RequestBody Driver driver) {
+    @PutMapping("/drivers/{id}")
+    public Driver fullUpdateDriver(@PathVariable("id") Long id, @RequestBody Driver driver) {
         Driver foundDriver = findDriver(id);
         foundDriver.setBirthDate(driver.getBirthDate());
         foundDriver.setName(driver.getName());
@@ -57,5 +57,10 @@ public class DriverAPI {
         foundDriver.setBirthDate(Optional.ofNullable(driver.getBirthDate()).orElse(foundDriver.getBirthDate()));
         foundDriver.setName(Optional.ofNullable(driver.getName()).orElse(foundDriver.getName()));
         return driverRepository.save(foundDriver);
+    }
+
+    @DeleteMapping("/drivers/{id}")
+    public void deleteDriver(@PathVariable("id") Long id) {
+        driverRepository.delete(findDriver(id));
     }
 }
