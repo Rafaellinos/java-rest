@@ -30,3 +30,14 @@
         * mime types: application -> binário -> <tipo>/<subtipo>
 * Idempotência
     - Propriedade http que define que o verbo sempre tera a mesma saída, nao importa quantas vezes for chamado
+	* HTTP  | Idempotent | Safe Method
+	* GET   |    Yes     |  Yes
+	* HEAD  |    Yes     |  Yes
+	* OPTION|    Yes     |  Yes
+	* DELETE|    Yes     |  No
+	* PUT   |    Yes     |  No
+	* PATCH |    No      |  No
+	* POST  |    No      |  No
+
+* Delete Lógico:
+   - Apenas desativar o registro e o delete passa a acontecer em um put ou patch
